@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        int original = n;
+        int reverse = 0;
+
+        // Find reverse of n
+        while (n > 0) {
+            int digit = n % 10;
+            reverse = reverse * 10 + digit;
+            n = n / 10;
+        }
+
+        int square1 = original * original;
+        int square2 = reverse * reverse;
+
+        int reverseSquare = 0;
+
+        // Find reverse of square2
+        while (square2 > 0) {
+            int digit = square2 % 10;
+            reverseSquare = reverseSquare * 10 + digit;
+            square2 = square2 / 10;
+        }
+
+        if (square1 == reverseSquare) {
+            System.out.println("Adam Number");
+        }
+        else {
+            System.out.println("Not Adam Number");
+        }
+    }
+}
